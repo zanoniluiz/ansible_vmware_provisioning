@@ -1,0 +1,7 @@
+---
+- name: Criacao de Virtual Machines DPF
+  hosts: localhost
+  gather_facts: no
+  connection: local
+  roles:
+    - vmware
