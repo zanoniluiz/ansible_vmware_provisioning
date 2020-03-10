@@ -37,7 +37,7 @@
       dns_suffix:
         - "{{ VM_DOMAIN }}"
     validate_certs: False
-#    folder: /rhel/
+    folder: /rhel/
     state: poweredon
     wait_for_ip_address: no
   delegate_to: localhost
