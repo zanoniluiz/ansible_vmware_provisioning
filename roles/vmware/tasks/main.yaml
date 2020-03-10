@@ -1,5 +1,5 @@
 ---
-- name: Create a VM from a template
+- name: Criacao Virtual Machine
   vmware_guest:
     datacenter: "{{ VM_DATACENTER }}"
     cluster: "{{ VM_CLUSTER }}"

@@ -1,5 +1,5 @@
 ---
-- name: Criacao de Virtual Machines DPF
+- name: Automacao Provisionamento Virtual Machines DPF
   hosts: localhost
   gather_facts: no
   connection: local
