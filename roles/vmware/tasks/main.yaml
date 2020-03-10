@@ -13,7 +13,7 @@
     hardware:
       memory_gb: "{{ VM_MEMORY }}"
       num_cpus: "{{ VM_CPU }}"
-#      num_cpu_cores_per_socket: 2
+      num_cpu_cores_per_socket: "{{ VM_CPU_CORES_SOCKET }}"
       memory_reservation_lock: "{{ VM_MEMORY_RESERVATION }}"
       version: 14 # Hardware version of virtual machine
     networks:
@@ -31,9 +31,9 @@
           - "{{ VM_DNS2 }}"
     customization:
       hostname: "{{ VM_NAME }}"
-#      dns_servers:
-#        - "{{ VM_DNS1 }}"
-#        - "{{ VM_DNS2 }}"
+      dns_servers:
+        - "{{ VM_DNS1 }}"
+        - "{{ VM_DNS2 }}"
       dns_suffix:
         - "{{ VM_DOMAIN }}"
     validate_certs: False
