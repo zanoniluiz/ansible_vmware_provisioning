@@ -1,41 +1,41 @@
 ---
 - name: Criacao Virtual Machine
   vmware_guest:
-    datacenter: "{{ VM_DATACENTER }}"
-    cluster: "{{ VM_CLUSTER }}"
-    name: "{{ VM_NAME }}"
-    template: "{{ VM_TEMPLATE }}"
-    datastore: "{{ VM_DATASTORE }}"
+    datacenter: "{{ vm_datacenter }}"
+    cluster: "{{ vm_cluster }}"
+    name: "{{ vm_name }}"
+    template: "{{ vm_template }}"
+    datastore: "{{ vm_datastore }}"
 #    disk:
-#    - size_gb: "{{ VM_DISK }}"
+#    - size_gb: "{{ vm_disk }}"
 #      type: thin
-#      datastore: "{{ VM_DATASTORE }}"
+#      datastore: "{{ vm_datastore }}"
     hardware:
-      memory_gb: "{{ VM_MEMORY }}"
-      num_cpus: "{{ VM_CPU }}"
-      num_cpu_cores_per_socket: "{{ VM_CPU_CORES_SOCKET }}"
-      memory_reservation_lock: "{{ VM_MEMORY_RESERVATION }}"
+      memory_gb: "{{ vm_memory }}"
+      num_cpus: "{{ vm_cpu }}"
+      num_cpu_cores_per_socket: "{{ vm_cpu_cores_socket }}"
+      memory_reservation_lock: "{{ vm_memory_reservation }}"
       version: 14 # Hardware version of virtual machine
     networks:
-      - name: "{{ VM_NETWORK }}"
-        domain: "{{ VM_DOMAIN }}"
+      - name: "{{ vm_network }}"
+        domain: "{{ vm_domain }}"
         start_connected: True
         connected: True
 #        device_type: vmxnet3
-        ip: "{{ VM_IP }}"
-        netmask: "{{ VM_MASK }}"
-        gateway: "{{ VM_GATEWAY }}"
+        ip: "{{ vm_ip }}"
+        netmask: "{{ vm_mask }}"
+        gateway: "{{ vm_gateway }}"
         type: static
         dns_servers:
-          - "{{ VM_DNS1 }}"
-          - "{{ VM_DNS2 }}"
+          - "{{ vm_dns1 }}"
+          - "{{ vm_dns2 }}"
     customization:
-      hostname: "{{ VM_NAME }}"
+      hostname: "{{ vm_name }}"
       dns_servers:
-        - "{{ VM_DNS1 }}"
-        - "{{ VM_DNS2 }}"
+        - "{{ vm_dns1 }}"
+        - "{{ vm_dns2 }}"
       dns_suffix:
-        - "{{ VM_DOMAIN }}"
+        - "{{ vm_domain }}"
     validate_certs: False
     folder: /rhel/
     state: poweredon
