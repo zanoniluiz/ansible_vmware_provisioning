@@ -1,5 +1,5 @@
 vmware_host: "{{ vmware_vcenter }}"
-vm_datacenter: "{{ vmwate_datacenter }}"
+vm_datacenter: "{{ vmware_datacenter }}"
 vm_cluster: "{{ vmware_cluster }}"
 vm_template: "{{ vmware_template }}"
 vm_datastore: "{{ vmware_datastore }}"
