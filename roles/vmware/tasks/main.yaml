@@ -21,7 +21,7 @@
         domain: "{{ vm_domain }}"
         start_connected: True
         connected: True
-#        device_type: vmxnet3
+        device_type: vmxnet3
         ip: "{{ vm_ip }}"
         netmask: "{{ vm_mask }}"
         gateway: "{{ vm_gateway }}"
@@ -31,6 +31,7 @@
           - "{{ vm_dns2 }}"
     customization:
       hostname: "{{ vm_name }}"
+      fullname: "{{ vm_name + '.' + _vm_domain }}"
       dns_servers:
         - "{{ vm_dns1 }}"
         - "{{ vm_dns2 }}"
@@ -39,6 +40,6 @@
     validate_certs: False
     folder: /rhel/
     state: poweredon
-    wait_for_ip_address: no
+    wait_for_ip_address: yes
   delegate_to: localhost
   register: deploy
