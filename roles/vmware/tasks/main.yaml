@@ -13,8 +13,8 @@
     hardware:
       memory_gb: "{{ vm_memory }}"
       num_cpus: "{{ vm_cpu }}"
-      num_cpu_cores_per_socket: "{{ vm_cpu_cores_socket }}"
-      memory_reservation_lock: "{{ vm_memory_reservation }}"
+      #num_cpu_cores_per_socket: "{{ vm_cpu_cores_socket }}"
+      #memory_reservation_lock: "{{ vm_memory_reservation }}"
       version: 14 # Hardware version of virtual machine
     networks:
       - name: "{{ vm_network }}"
