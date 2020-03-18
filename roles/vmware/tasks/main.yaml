@@ -31,7 +31,7 @@
           - "{{ vm_dns2 }}"
     customization:
       hostname: "{{ vm_name }}"
-      fullname: "{{ vm_name + '.' + _vm_domain }}"
+      fullname: "{{ vm_name + '.' + vm_domain }}"
       dns_servers:
         - "{{ vm_dns1 }}"
         - "{{ vm_dns2 }}"
